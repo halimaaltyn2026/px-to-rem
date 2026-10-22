@@ -1,0 +1,54 @@
+:root {
+  --bg: #f5f7fa;
+  --text: #1f2933;
+  --accent: #2563eb;
+  --error: #b91c1c;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  max-width: 28rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+input,
+button {
+  font: inherit;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+input {
+  border: 2px solid #cbd2d9;
+}
+
+button {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+input:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--text);
+  outline-offset: 2px;
+}
+
+#result {
+  font-size: 1.25rem;
+  min-height: 1.5em;
+}
+
+#result.error {
+  color: var(--error);
+}
