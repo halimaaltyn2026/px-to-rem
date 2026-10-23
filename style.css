@@ -1,8 +1,21 @@
+
 :root {
   --bg: #f5f7fa;
   --text: #1f2933;
   --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --border: #cbd2d9;
   --error: #b91c1c;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111827;
+    --text: #f3f4f6;
+    --border: #4b5563;
+    --error: #fca5a5;
+  }
+}
+  }
 }
 
 body {
@@ -20,15 +33,22 @@ main {
   gap: 0.75rem;
 }
 
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.25rem);
+}
+
 input,
 button {
   font: inherit;
   padding: 0.75rem;
   border-radius: 0.5rem;
+  transition: background 0.2s, border-color 0.2s;
 }
 
 input {
-  border: 2px solid #cbd2d9;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: inherit;
 }
 
 button {
@@ -36,6 +56,10 @@ button {
   background: var(--accent);
   color: #fff;
   cursor: pointer;
+}
+
+button:hover {
+  background: var(--accent-hover);
 }
 
 input:focus-visible,
@@ -51,4 +75,27 @@ button:focus-visible {
 
 #result.error {
   color: var(--error);
+}
+
+@media (min-width: 40rem) {
+  main {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+
+  h1,
+  #result {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input,
+  button {
+    transition: none;
+  }
 }
