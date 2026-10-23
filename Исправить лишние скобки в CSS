@@ -15,8 +15,7 @@
     --error: #fca5a5;
   }
 }
-  }
-}
+
 
 body {
   margin: 0;
